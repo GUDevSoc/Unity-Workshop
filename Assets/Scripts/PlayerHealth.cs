@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour {
 	public float maxHealth;
 	float health;
+
+    Animator animationController;
 	//bool isDead =false;
 	// Use this for initialization
 	void Start () {
+        animationController = GetComponent<Animator>();
 		health = maxHealth;
 
 	}
@@ -15,7 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (health <= 0) {
-			//kill
+            animationController.SetBool("isDead", true);
 			Debug.Log("I'm dead");
 		}
 
