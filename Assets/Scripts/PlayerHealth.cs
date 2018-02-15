@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 	public float maxHealth;
@@ -19,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		if (health <= 0) {
             animationController.SetBool("isDead", true);
-			Debug.Log("I'm dead");
+            GameOver();
 		}
 
 
@@ -33,6 +34,12 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 	}
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GAMEOVER");
+    }
+
 
 
 }

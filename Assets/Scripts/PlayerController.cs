@@ -24,3 +24,4 @@ public class PlayerController : MonoBehaviour {
 		rb.AddForce (force);
 	}
 }
+
